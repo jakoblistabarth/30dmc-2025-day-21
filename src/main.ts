@@ -39,7 +39,7 @@ app.html(`
   </figure> 
 `);
 
-const gpx = await parseGpxFile("/activity-cropped.gpx");
+const gpx = await parseGpxFile("activity-cropped.gpx");
 const geoJson = gpxToGeoJSON(gpx);
 const points = getPointsFromGpx(gpx);
 

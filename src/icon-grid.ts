@@ -6,7 +6,7 @@ import { range } from "d3-array";
 const app = select("#app");
 
 app.html(`
-    <h1>Icon Demo</h1>
+    <h1>Icons</h1>
     <div id="icon-grid"></div>
 `);
 
@@ -55,7 +55,7 @@ grid
   .data(gridData)
   .enter()
   .append("circle")
-  .attr("r", 0.1)
+  .attr("r", 0.125)
   .attr("cx", (d) => d.x)
   .attr("cy", (d) => d.y)
   .attr("fill", "var(--color-primary)");

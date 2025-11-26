@@ -102,7 +102,8 @@ const trackLayer = svg
   .attr("d", path(geoJson))
   .attr("pathLength", 100)
   .attr("fill", "none")
-  .attr("stroke", "var(--color-secondary)");
+  .attr("stroke", "var(--color-secondary)")
+  .attr("mix-blend-mode", "multiply");
 
 const marker = svg.append("g").attr("id", "marker").attr("opacity", 1);
 marker
@@ -116,7 +117,8 @@ marker
   .append("circle")
   .attr("r", 12)
   .attr("fill", "var(--color-primary)")
-  .attr("opacity", 0.1);
+  .attr("opacity", 0.1)
+  .attr("mix-blend-mode", "multiply");
 
 const subline = app.select("#subline");
 console.log(subline);

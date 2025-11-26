@@ -43,12 +43,17 @@ svg
   .attr("stroke", "var(--color-secondary)")
   .attr("stroke-width", 0.25);
 
+svg.append(([_, icon]) => icon().node());
+
 const gridData = range(s).flatMap((x) => range(s).map((y) => ({ x, y })));
 
 const grid = svg
   .append("g")
   .attr("id", "icon-grid")
-  .attr("transform", `translate(${-s / 2}, ${-s / 2})`);
+  .attr(
+    "transform",
+    `translate(${-s / 2 + offset / 2}, ${-s / 2 + offset / 2})`
+  );
 
 grid
   .selectAll("circle")
@@ -59,5 +64,3 @@ grid
   .attr("cx", (d) => d.x)
   .attr("cy", (d) => d.y)
   .attr("fill", "var(--color-primary)");
-
-svg.append(([_, icon]) => icon().node());

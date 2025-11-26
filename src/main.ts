@@ -8,6 +8,7 @@ import {
   pragerZeileIcon,
   stadiumIcon,
   sunIcon,
+  townHallIcon,
   trafficLightsIcon,
 } from "./icons";
 import { animateMarker } from "./animateMarker";
@@ -94,6 +95,11 @@ const icons: IconDefinition[] = [
     point: points.features.at(170),
     label: "Crocusfield",
     icon: crocusIcon(),
+  },
+  {
+    point: points.features.at(290),
+    label: "Townhall Tower",
+    icon: townHallIcon(),
   },
 ];
 

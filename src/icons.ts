@@ -147,6 +147,38 @@ export const crocusIcon = () => {
   return icon;
 };
 
+export const townHallIcon = () => {
+  const icon = create("svg:g")
+    .attr("stroke", "var(--color-primary)")
+    .attr("fill", "var(--color-background)");
+  icon
+    .append("rect")
+    .attr("x", -s * 0.2)
+    .attr("width", s * 0.4)
+    .attr("height", s * 0.4);
+  icon
+    .append("path")
+    .attr(
+      "d",
+      `M ${-s * 0.2} 0 L ${-s * 0.1} ${-s * 0.2} l ${s * 0.2} 
+      0 L ${s * 0.2} 0 Z`
+    )
+    .attr("stroke-linejoin", "round");
+  icon
+    .append("line")
+    .attr("y1", -s * 0.2)
+    .attr("y2", -s * 0.3);
+  icon
+    .append("circle")
+    .attr("r", s * 0.1)
+    .attr("cy", s * 0.2);
+  icon
+    .append("circle")
+    .attr("r", 1)
+    .attr("cy", -s * 0.4);
+  return icon;
+};
+
 export const icons = {
   crocusIcon,
   flowerIcon,
@@ -154,4 +186,5 @@ export const icons = {
   stadiumIcon,
   sunIcon,
   trafficLightsIcon,
+  townHallIcon,
 };

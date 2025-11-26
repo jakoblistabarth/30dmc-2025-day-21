@@ -142,3 +142,10 @@ figcaption img line {
 #subline {
   font-weight: normal;
 }
+
+#icon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 2em;
+  padding: 2em;
+}

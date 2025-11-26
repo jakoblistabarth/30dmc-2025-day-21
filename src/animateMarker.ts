@@ -16,7 +16,7 @@ export const animateMarker = (
   path: Selection<SVGPathElement, undefined, null, undefined>,
   projection: GeoProjection,
   animationLength = 50000,
-  onTick?: (timeMs: number, pos: [number, number]) => void
+  onTick?: (timeMs: number, t: number, pos: [number, number]) => void
 ): AnimateController => {
   const times = points.map((d) => d.properties.time);
   const startTime = times.at(0)?.getTime() ?? 0;
@@ -74,7 +74,7 @@ export const animateMarker = (
         }
 
         marker.attr("transform", `translate(${x}, ${y})`);
-        if (onTick) onTick(currentTimeMs, [x, y]);
+        if (onTick) onTick(currentTimeMs, t, [x, y]);
       })
       .on("end", function () {
         if (!running) return;

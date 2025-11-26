@@ -35,8 +35,16 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
+  --animation-progess: 0;
+
   --color-primary: rgb(231, 87, 54);
-  --color-background: rgb(10, 10, 30);
+  --color-background-input: rgb(10, 10, 30);
+  --color-mix-percentage: calc(var(--animation-progess) * 100% / 3);
+  --color-background: color-mix(
+    in oklab,
+    var(--color-background-input),
+    white var(--color-mix-percentage)
+  );
   --color-secondary: color-mix(
     in oklab,
     var(--color-primary),
@@ -47,7 +55,7 @@
 @media (prefers-color-scheme: light) {
   :root {
     --color-primary: #e39b00;
-    --color-background: #fff5b9;
+    --color-background-input: #fdea7f;
   }
 }
 
@@ -66,6 +74,7 @@ body {
   min-height: 100vh;
   color: var(--color-primary);
   background-color: var(--color-background);
+  transition: background-color 0.2s ease;
   font-family: "Space Mono", monospace;
 }
 

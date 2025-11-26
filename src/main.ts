@@ -127,10 +127,14 @@ animateMarker(
   trackLayer,
   projection,
   20000,
-  (timeMs) => {
+  (timeMs, t) => {
     const date = new Date(timeMs);
     updateDate(subline, date);
     updateBackgroundIcon(app.select("#background-icon"), date, icons);
+    document.documentElement.style.setProperty(
+      "--animation-progess",
+      t.toString()
+    );
   }
 );
 
